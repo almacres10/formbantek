@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<div>
+    <h2>Form Bantuan Teknis</h2>
+    <h3>Kanwil DJP Sumatera Barat dan Jambi</h3>
+</div>
+
+<div class="form-container">
+    <form action="#" method="post">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="unit">Unit:</label>
+        <input type="text" id="unit" name="unit" required>
+
+        <label for="permasalahan">Permasalahan:</label>
+        <textarea id="permasalahan" name="permasalahan" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+        <button type="button" onclick="toggleNightMode()">Night Mode</button>
+    </form>
+</div>
+
+<script>
+    function toggleNightMode() {
+        document.body.classList.toggle('night-mode');
+        document.querySelector('.form-container').classList.toggle('night-mode');
+    }
+</script>
+
+
+{% endblock %}
