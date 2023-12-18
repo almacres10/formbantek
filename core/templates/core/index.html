@@ -2,28 +2,27 @@
 
 {% block content %}
 
-<div>
-    <h2>Form Bantuan Teknis</h2>
-    <h3>Kanwil DJP Sumatera Barat dan Jambi</h3>
+
+<div class="w-full self-center px-4 lg:w-1/3">
+    <h1 class="text-base font-semibold text-teal-600 md:text-xl lg:text-2xl"> Form
+    <span class="mt-1 text-4xl block font-bold text-slate-900">Bantek 050</span></h1>
+    <h2 class="font-medium text-slate-500 text-lg mb-5">Bantuan Teknis Komputer dan Data  <br>
+    <span class="text-slate-900 lg:text-sm">Bidang Data dan Pengawasan Potensi Perpajakan</span></h2>
+    <p class="font-medium text-slate-400 mb-10 leading-relaxed">
+    Sinergi Kuat, Sumbarja Hebat,  
+    <span class="text-slate-900 font-bold">Kanwil 050 Melesat!!</span></p>
 </div>
 
 <div class="form-container">
-    <form action="#" method="post">
-        <label for="nama">Nama:</label>
-        <input type="text" id="nama" name="nama" required>
-
-        <label for="unit">Unit:</label>
-        <input type="text" id="unit" name="unit" required>
-
-        <label for="permasalahan">Permasalahan:</label>
-        <textarea id="permasalahan" name="permasalahan" rows="4" required></textarea>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p|safe }}
 
         <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
-
-        <button type="button" onclick="toggleNightMode()">Night Mode</button>
     </form>
 </div>
+
+
 
 <script>
     function toggleNightMode() {
