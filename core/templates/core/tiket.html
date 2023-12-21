@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<div class="max-w-4xl mx-auto bg-white p-6 rounded-md shadow-md">
+    <h1 class="text-2xl font-bold mb-6">Daftar Tiket</h1>
+    <table class="min-w-full bg-white border border-gray-300 shadow-sm">
+        <thead>
+            <tr>
+                <th class="py-2 px-4 border-b">Nama</th>
+                <th class="py-2 px-4 border-b">Bidang</th>
+                <th class="py-2 px-4 border-b">Jenis Masalah</th>
+                <th class="py-2 px-4 border-b">Permasalahan</th>
+                <th class="py-2 px-4 border-b">Tanggal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tiket in tiket_list %}
+                <tr>
+                    <td class="py-2 px-4 border-b">{{ tiket.NAMA }}</td>
+                    <td class="py-2 px-4 border-b">{{ tiket.BIDANG }}</td>
+                    <td class="py-2 px-4 border-b">{{ tiket.JENIS_MASALAH }}</td>
+                    <td class="py-2 px-4 border-b">{{ tiket.PERMASALAHAN }}</td>
+                    <td class="py-2 px-4 border-b">{{ tiket.DATE }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
