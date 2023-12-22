@@ -19,13 +19,18 @@
             </div>
 
             <div class="ml-4">
-                <div class="form-container bg-cyan-100">
+                <div class="form-container bg-gray-100">
                     <form method="post" action="{% url 'core:tiketBantek' %}" class="">
                         {% csrf_token %}
                         {{ form.as_p|safe }}
 
-                        <button type="submit" class="flex mt-2 py-4 px-8 text-lg bg-teal-800 
-                        text-white rounded-xl hover:bg-teal-500 mx-auto">Submit</button>
+                        <div class="flex justify-center">
+                            <button type="submit" class="flex mt-2 py-2 px-8 text-sm bg-teal-600 
+                            text-white rounded-xl hover:bg-teal-900 mx-2">Submit</button>
+                            <button type="reset" class="flex mt-2 py-2 px-8 text-sm bg-rose-600 
+                            text-white rounded-xl hover:bg-rose-900 mx-2">Reset</a>
+                        </div>
+                        
                     </form>
                 </div>
             </div>

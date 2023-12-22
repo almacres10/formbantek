@@ -36,7 +36,7 @@
 }
 
 .form-container button {
-    background-color: #4caf50;
+    background-color: teal;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -46,7 +46,7 @@
 }
 
 .form-container button:hover {
-    background-color: #45a049;
+    background-color: teal;
 }
 
 .form-container button[type="reset"] {
