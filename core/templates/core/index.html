@@ -38,6 +38,19 @@
     </div>
 </section>
 
+{% comment %} <script>
+    $(document).ready(function () {
+
+        $("#id_bidang_field").change(function () {
+            var selectedBidang = $(this).val();
+            var namaFieldSelect = $("#id_nama_field");
+
+            namaFieldSelect.find("option").filter(function () {
+                return $(this).data("bidang") !== selectedBidang;
+            }).remove();
+        });
+    });
+</script> {% endcomment %}
 
 
 <script>
@@ -46,6 +59,5 @@
         document.querySelector('.form-container').classList.toggle('night-mode');
     }
 </script>
-
 
 {% endblock %}

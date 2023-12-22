@@ -1,6 +1,9 @@
 # forms.py
 from django import forms
 from .models import modelsPegawai
+from django.contrib.auth.forms import AuthenticationForm
+
+
 
 BANTEK_CHOICES =( 
     ("0", "Pilih Jenis Masalah"), 
@@ -13,7 +16,7 @@ BANTEK_CHOICES =(
 
 class BantuanTeknisForm(forms.Form):
     nama_field = forms.ChoiceField(
-        choices=[('', 'Pilih Nama Pegawai')] + list(modelsPegawai.objects.values_list('NAMA', 'NAMA').distinct()),
+        choices=[('', 'Pilih Nama Pegawai')] + list(modelsPegawai.objects.values_list('BIDANG', 'NAMA').distinct()),
         label='Nama',
         widget=forms.Select(attrs={'class': 'border p-2 rounded-md'}),
     )
@@ -33,7 +36,13 @@ class BantuanTeknisForm(forms.Form):
     )
 
 
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.fields['unit'].label = 'Unit'
-    #     self.fields['unit'].label_tag(attrs={'class': 'your-custom-class'})
+class LoginForm(AuthenticationForm):
+    nip_pendek = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'NIP Bapak/Ibu',
+        'class': 'w-full py-4 px-6 rounded-xl'
+    }))
+        
+    password = forms.CharField(widget=forms.PasswordInput(attrs={
+        'placeholder': ' Password',
+        'class': 'w-full py-4 px-6 rounded-xl'
+    }))
